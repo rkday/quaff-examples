@@ -1,0 +1,11 @@
+These are example scripts for the Quaff Ruby library.
+
+To use them, run 'gem install quaff', then ruby <scriptname>.
+
+* uac.rb will make a call over UDP to localhost:5060
+* uac-tcp.rb will make a call over UDP to localhost:5060
+* uas.rb will listen over UDP on localhost:5060 for a single call
+* uas-tcp.rb will listen over TCP on localhost:5060 for a single call
+* uas-test-response.rb will listen over UDP on localhost:5060 for a single call, and test the headers of that call
+
+See https://github.com/rkd91/quaff for more information.
