@@ -1,7 +1,7 @@
 require 'quaff'
 require 'sdp'
 
-phone = TCPSIPEndpoint.new(5061)
+phone = Quaff::TCPSIPEndpoint.new(5061)
 call = phone.new_call("1",
                       "sip:uac@example.com",
                       phone.new_connection('localhost', 5060),
