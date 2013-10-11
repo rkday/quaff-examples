@@ -1,11 +1,16 @@
-These are example scripts for the Quaff Ruby library.
+These are example scripts for the Quaff Ruby library. They are intended as examples of how to use Quaff, and not as production-quality code.
 
-To use them, run 'gem install quaff', then ruby <scriptname>.
+To use them, run 'gem install quaff' (and optionally "gem install sdp" for SDP support), then ruby <scriptname>.
 
-* uac.rb will make a call over UDP to localhost:5060
-* uac-tcp.rb will make a call over UDP to localhost:5060
+* uac.rb will make a call over UDP to localhost:5060.
+* uac-tcp.rb will make a call over UDP to localhost:5060.
+
+* uac-sdp.rb and uac-tcp-sdp.rb show how to handle SIP bodies and SDP messages. They will insert a text/plain body into the INVITE, then parse any SDP returned on the 200 OK (using the 'sdp' gem) and print out the parsed hash.
+
+* uac-auth.rb will REGISTER with the username and password "myself" and "secret" then make a call, both over UDP to localhost:5060.
+
 * uas.rb will listen over UDP on localhost:5060 for a single call
 * uas-tcp.rb will listen over TCP on localhost:5060 for a single call
-* uas-test-response.rb will listen over UDP on localhost:5060 for a single call, and test the headers of that call
+* uas-test-response.rb will listen over UDP on localhost:5060 for a single call, and test the headers of that call. (It will probably fail because it tests the ACK for an arbitrary header, but this is by design, to demonstrate failiure logging.)
 
-See https://github.com/rkd91/quaff for more information.
+See https://github.com/rkday/quaff for more information.
