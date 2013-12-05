@@ -1,7 +1,7 @@
 require 'quaff'
 
-phone = Quaff::TCPSIPEndpoint.new(5060)
-call = phone.new_call  # Without an argument, this gets the next incoming call
+phone = Quaff::TCPSIPEndpoint.new("sip:uas@example.com", "rkd", "secret", 5060, "localhost")
+call = phone.incoming_call
 
 data = call.recv_request("INVITE")
 call.send_response(100, "Trying")
